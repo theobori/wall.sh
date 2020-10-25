@@ -4,6 +4,7 @@
 
 Run `install.sh`
 
-## How to run it ?
+## Requirements
 
-`./wall.sh -s <brick size>`
+- Terminal that supports colors.
+- bash
