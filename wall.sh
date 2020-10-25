@@ -1,4 +1,4 @@
-colors=("-r" "-g" "-y" "-b" "-p" "-c" "--rainbow")
+colors=("-r" "-g" "-y" "-b" "-p" "-c")
 
 fancy_clean () {
     printf "\x1b[H"
@@ -57,7 +57,7 @@ main () {
     for i in {0..6}; do
         if [ $1 == ${colors[$i]} ]; then uni_color $((31+$i)); fi
     done
-    rainbow $2
+    if [ $1 == "--rainbow" ]; then rainbow $2; fi
 }
 
 error_handling $1 $2
