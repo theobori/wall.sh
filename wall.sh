@@ -13,6 +13,7 @@ fancy_clean () {
 help_message () {
     echo "usage : $0 <color> <brick size>"
     echo "optional arguments:"
+    echo "  -h, --help        show this help message and exit"
     echo "  -r        red"
     echo "  -g        green"
     echo "  -y        yellow"
