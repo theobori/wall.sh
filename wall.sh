@@ -28,7 +28,7 @@ error_handling () {
     error=True
     if [[ -z $1 || -z $2 ]]; then help_message; fi
     for x in ${colors[*]}; do
-        if [ $1 == $x ]; then error=False; fi
+        if [[ $1 == $x || $1 == "--rainbow" ]]; then error=False; fi
     done
     if [ $error = True ]; then help_message; fi
 }
@@ -64,7 +64,7 @@ uni_color () {
 main () {
     clear
     for i in {0..6}; do
-        if [ $1 == ${colors[$i]} ]; then uni_color $((31+$i)); fi
+        if [[ $1 == ${colors[$i]} ]]; then uni_color $((31+$i)); fi
     done
     if [ $1 == "--rainbow" ]; then rainbow $2; fi
 }
