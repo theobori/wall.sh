@@ -6,5 +6,5 @@ Run `install.sh`
 
 ## Requirements
 
-- Terminal that supports colors.
+- Terminal that supports colors
 - bash
