@@ -50,7 +50,7 @@ rainbow () {
 
 uni_color () {
     while :; do
-        le=$1;co=$(tput cols);li=$(tput lines)
+        le=$2;co=$(tput cols);li=$(tput lines)
         for y in $(seq 1 $(((co*li)/le+1))); do
             for x in $(seq 1 $((le))); do
                 printf "\e[%dm\xe2\x96\x88\e[0m" $1
@@ -64,7 +64,7 @@ uni_color () {
 main () {
     clear
     for i in {0..6}; do
-        if [[ $1 == ${colors[$i]} ]]; then uni_color $((31+$i)); fi
+        if [[ $1 == ${colors[$i]} ]]; then uni_color $((31+$i)) $2; fi
     done
     if [ $1 == "--rainbow" ]; then rainbow $2; fi
 }
