@@ -10,18 +10,26 @@ fancy_clean () {
     done
 }
 
-display_error () { # TODO: help message
-    printf "syntax : $0 -s <brick size>\n"
+help_message () {
+    echo "usage : $0 <color> <brick size>"
+    echo "optional arguments:"
+    echo "  -r        red"
+    echo "  -g        green"
+    echo "  -y        yellow"
+    echo "  -b        blue"
+    echo "  -p        purple"
+    echo "  -c        cyan"
+    echo "  --rainbow        rainbow + blink"
     exit
 }
 
 error_handling () {
     error=True
-    if [[ -z $1 || -z $2 ]]; then display_error; fi
+    if [[ -z $1 || -z $2 ]]; then help_message; fi
     for x in ${colors[*]}; do
         if [ $1 == $x ]; then error=False; fi
     done
-    if [ $error = True ]; then display_error; fi
+    if [ $error = True ]; then help_message; fi
 }
 
 rainbow () {
