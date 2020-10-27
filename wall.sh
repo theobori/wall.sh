@@ -50,14 +50,14 @@ rainbow () {
 
 uni_color () {
     while :; do
-        le=$2;co=$(tput cols);li=$(tput lines)
-        for y in $(seq 1 $(((co*li)/le+1))); do
-            for x in $(seq 1 $((le))); do
+        co=$(tput cols);li=$(tput lines)
+        for y in $(seq 1 $(((co*li)/$2+1))); do
+            for x in $(seq 1 $2); do
                 printf "\e[%dm\xe2\x96\x88\e[0m" $1
             done
             sleep 0.05
         done
-        fancy_clean $co $li $le
+        fancy_clean $co $li $2
     done
 }
 
