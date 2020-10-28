@@ -75,7 +75,7 @@ fancy_clean_h () {
         for size in $(seq 1 $(($3))); do
             printf "\033[$((y));$((x))H\x20"
             y=$(expr $y + 1)
-            if [[ $y -ge $li ]]; then x=$(expr $x - 1); y=0; fi
+            if [[ $y -gt $li ]]; then x=$(expr $x - 1); y=0; fi
         done
         sleep 0.005
     done
@@ -90,7 +90,7 @@ uni_color_h () {
             for ii in $(seq 1 $2); do
                 printf "\033[$((y));$((x))H\e[%dm\xe2\x96\x88\e[0m" $1
                 y=$(expr $y + 1)
-                if [[ $y -ge $li ]]; then x=$(expr $x + 1); y=0; fi
+                if [[ $y -gt $li ]]; then x=$(expr $x + 1); y=0; fi
             done
             sleep 0.05
         done
@@ -108,7 +108,7 @@ rainbow_h () {
             for ii in $(seq 1 $((le))); do
                 printf "\033[$((y));$((x))H\e[%d;%dm\xe2\x96\x88\e[0m" $f $c
                 y=$(expr $y + 1)
-                if [[ $y -ge $li ]]; then x=$(expr $x + 1); y=0; fi
+                if [[ $y -gt $li ]]; then x=$(expr $x + 1); y=0; fi
             done
             f=0;sleep 0.05
         done
