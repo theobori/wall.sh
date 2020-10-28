@@ -85,7 +85,7 @@ fancy_clean_h () {
 uni_color_h () {
     while :; do
         co=$(tput cols);li=$(tput lines)
-        x=1;y=0
+        x=0;y=0
         for i in $(seq 1 $(((co*li)/$2+1))); do
             for ii in $(seq 1 $2); do
                 printf "\033[$((y));$((x))H\e[%dm\xe2\x96\x88\e[0m" $1
