@@ -36,7 +36,6 @@ fancy_clean_v () {
         done
         sleep 0.005
     done
-    clear
 }
 
 rainbow_v() {
@@ -50,7 +49,7 @@ rainbow_v() {
             done
             f=0;sleep 0.05
         done
-        fancy_clean $co $li $le
+        fancy_clean_v $co $li $le
     done
 }
 
@@ -63,7 +62,7 @@ uni_color_v () {
             done
             sleep 0.05
         done
-        fancy_clean $co $li $2
+        fancy_clean_v $co $li $2
     done
 }
 
