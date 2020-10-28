@@ -61,6 +61,23 @@ uni_color () {
     done
 }
 
+uni_color_v () {
+    while :; do
+        co=$(tput cols);li=$(tput lines)
+        x=0;y=0
+        for i in $(seq 1 $(((co*li)/$2+1))); do
+            for ii in $(seq 1 $2); do
+                printf "\033[$((y));$((x))H\e[%dm\xe2\x96\x88\e[0m" $1
+                y=$(expr $y + 1)
+                if [[ $y -ge $li ]]; then x=$(expr $x + 1); y=0; fi
+            done
+            sleep 0.05
+        done
+        fancy_clean $co $li $2
+        clear
+    done
+}
+
 main () {
     clear
     for i in {0..6}; do
