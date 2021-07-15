@@ -25,3 +25,10 @@ docker run -it -d wall.sh
 ```
 docker run -t -i -v $PWD:/wallsh ubuntu /bin/bash /wallsh/wall.sh
 ```
+
+##### Pull and run image
+
+```
+docker pull b0thr34l/wall.sh
+docker run -it b0thr34l/wall.sh
+```
