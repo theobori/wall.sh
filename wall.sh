@@ -38,7 +38,7 @@ fancy_clean_v () {
     done
 }
 
-rainbow_v() {
+rainbow_v () {
     while :; do
         le=$1;co=$(tput cols);li=$(tput lines);f=0;r=$((RANDOM % 6 + 31))
         for y in $(seq 1 $(((co*li)/le+1))); do
@@ -120,6 +120,7 @@ rainbow_h () {
 
 main () {
     clear
+    trap exit INT
     tmp=_v
     if [[ $3 == "--horizontal" ]]; then tmp=_h; fi
     for i in {0..6}; do
