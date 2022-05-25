@@ -6,6 +6,7 @@ Run `install.sh`
 
 ## Requirements
 
+- This packages: `libncurses5-dev coreutils` (Debian/Ubuntu)
 - Terminal that supports colors
 - Font that supports the unicode character **U+2588**
 - bash
@@ -23,7 +24,7 @@ docker run -it -d wall.sh
 ##### Bind mount
 
 ```
-docker run -t -i -v $PWD:/wallsh ubuntu /bin/bash /wallsh/wall.sh
+docker run -it -v $PWD:/wallsh ubuntu /bin/bash /wallsh/wall.sh
 ```
 
 ##### Pull and run image
